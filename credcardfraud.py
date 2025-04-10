@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import classification_report, confusion_matrix
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Read the CSV file
 df = pd.read_csv('C:\\Users\\Harry\\Desktop\\creditcardproject\\creditcard\\creditcard.csv')
@@ -48,4 +49,22 @@ plt.barh(feature_importance['feature'].head(10), feature_importance['importance'
 plt.xlabel('Importance')
 plt.title('Top 10 Most Important Features in Predicting Fraud')
 plt.gca().invert_yaxis()  # Invert y-axis to have the most important feature on top
+plt.show()
+
+# Plotting a boxplot to visualize the distribution of V17 by Class (Fraud vs. Not Fraud)
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='Class', y='V17', data=df, palette='Set2')
+
+plt.title('Distribution of V17 by Class')
+plt.xlabel('Class (0 = Not Fraud, 1 = Fraud)')
+plt.ylabel('V17')
+plt.show()
+
+# Plotting a boxplot to visualize the distribution of V14 by Class (Fraud vs. Not Fraud)
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='Class', y='V14', data=df, palette='Set2')
+
+plt.title('Distribution of V14 by Class')
+plt.xlabel('Class (0 = Not Fraud, 1 = Fraud)')
+plt.ylabel('V14')
 plt.show()
