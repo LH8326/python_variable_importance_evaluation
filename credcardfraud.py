@@ -60,11 +60,27 @@ plt.xlabel('Class (0 = Not Fraud, 1 = Fraud)')
 plt.ylabel('V17')
 plt.show()
 
+# Violin plot for a better visual understanding of distribution
+plt.figure(figsize=(10, 6))
+sns.violinplot(x='Class', y='V17', data=df, palette='Set2')
+plt.title('Violin Plot of V17 by Class (Fraud vs. Not Fraud)')
+plt.xlabel('Class (0 = Not Fraud, 1 = Fraud)')
+plt.ylabel('V17')
+plt.show()
+
 # Plotting a boxplot to visualize the distribution of V14 by Class (Fraud vs. Not Fraud)
 plt.figure(figsize=(10, 6))
 sns.boxplot(x='Class', y='V14', data=df, palette='Set2')
 
 plt.title('Distribution of V14 by Class')
+plt.xlabel('Class (0 = Not Fraud, 1 = Fraud)')
+plt.ylabel('V14')
+plt.show()
+
+# Violin plot for a better visual understanding of distribution
+plt.figure(figsize=(10, 6))
+sns.violinplot(x='Class', y='V14', data=df, palette='Set2')
+plt.title('Violin Plot of V14 by Class (Fraud vs. Not Fraud)')
 plt.xlabel('Class (0 = Not Fraud, 1 = Fraud)')
 plt.ylabel('V14')
 plt.show()
